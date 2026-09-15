@@ -4,7 +4,13 @@ Mockup interattivo ad alta fedeltà di un’app di incontri voice-first: **prima
 
 ## Anteprima
 
-[Apri il prototipo](https://voemi-conversazioni.organiqsocialagency.chatgpt.site) (accesso privato).
+[Apri il sito pubblico](https://organiqsocialagency-wq.github.io/voemi/).
+
+## Pubblicazione automatica
+
+Ogni push su `main` che modifica `dist/` o il workflow di pubblicazione aggiorna il sito GitHub Pages. Modifica i file in `dist/`, esegui commit e push, poi controlla la scheda **Actions** della repository. È possibile avviare una pubblicazione anche manualmente con **Publish Voemi → Run workflow**.
+
+Il precedente indirizzo Sites resta una pubblicazione separata: i push su GitHub aggiornano il link GitHub Pages indicato sopra.
 
 ## Percorsi inclusi
 
