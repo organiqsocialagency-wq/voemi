@@ -42,8 +42,23 @@ Apri <http://localhost:5173>.
 
 ## Limiti del prototipo
 
-Persone, disponibilità, match e risposte sono simulati. Non sono presenti autenticazione, backend, telefonate reali o salvataggio permanente. Il microfono non viene attivato. I dati della demo rimangono in memoria e si azzerano ricaricando la pagina. Il ritratto è dimostrativo e generato. Le icone delle categorie provengono dai materiali approvati su Drive: Voemi → D) Prodotto → Elementi APP → ICONE → Icone Stanze. Per Teatro viene usata l’icona Default, in assenza di un asset dedicato nella cartella.
+Persone, disponibilità, match e risposte sono simulati. Non sono presenti autenticazione, backend, telefonate reali o salvataggio permanente. Il microfono non viene attivato. I dati della demo rimangono in memoria e si azzerano ricaricando la pagina. Il ritratto è dimostrativo e generato. Le icone delle categorie provengono dai materiali approvati su Drive: Voemi → D) Prodotto → Elementi APP → ICONE → Icone Stanze. Teatro ora usa un asset dedicato generato a partire dall’icona Default approvata. Anime & Serie mantiene intenzionalmente l’eccezione manga monocromatica.
 
 ## Identità visiva
 
 Manrope; viola `#8F5CF6`, viola soft `#B783EC`, corallo `#FF5D6C`, lavanda `#F8F4FF`, ink `#17141B`. Il font viene caricato da Google Fonts.
+
+## Evoluzione del pilota
+
+La nuova home rende esplicita la disponibilità demo e distingue tre temi iniziali (Roma: Agorà, Cinema, Musica) dagli argomenti in attesa. Percorsi aggiunti:
+
+- Preparazione a una prima conversazione di 3 minuti e conferma simulata dell’altra persona.
+- Uno spunto facoltativo per tema, con alternativa.
+- Dopo 180 secondi, scelta di continuare: la demo simula il consenso dell’altra persona. Il comando “Prova la fine dei 3 minuti” permette di esplorare il passaggio senza attendere.
+- Nessuna disponibilità, proposta di finestre di incontro e avviso salvato nella sessione, senza notifiche reali.
+- Informazioni sulla privacy, verifica dimostrativa, blocco locale e simulazione di segnalazione. Nessun dato viene inviato a moderazione.
+- Nuova composizione delle card, icona Teatro, chiamata focalizzata e rivelazione progressiva del volto.
+
+`dist/experience.js` e `dist/experience.css` contengono questa evoluzione. Tutte le azioni di servizio sono simulate e si azzerano al ricaricamento; non costituiscono sicurezza o verifica reale. La fotografia dimostrativa è scaricabile dal browser anche quando è sfocata: nel prodotto servirà un controllo di accesso lato server.
+
+[Protocollo di test e servizi da integrare](docs/pilot-test.md).
