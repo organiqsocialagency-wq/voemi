@@ -34,14 +34,15 @@ Apri <http://localhost:5173>.
 ## Struttura
 
 - `dist/index.html`: struttura dell’app.
-- `dist/style.css`: stile, responsive e animazioni.
+- `dist/style.css`: componenti base.
+- `dist/refinement.css`: rifinitura visiva responsive, card e onde vocali.
 - `dist/app.js`: navigazione, stati e interazioni.
 - `dist/assets/`: marchio, illustrazioni e ritratto dimostrativo.
 - `.openai/hosting.json`: configurazione della pubblicazione Sites esistente.
 
 ## Limiti del prototipo
 
-Persone, disponibilità, match e risposte sono simulati. Non sono presenti autenticazione, backend, telefonate reali o salvataggio permanente. Il microfono non viene attivato. I dati della demo rimangono in memoria e si azzerano ricaricando la pagina. Il ritratto e le illustrazioni delle categorie sono generati.
+Persone, disponibilità, match e risposte sono simulati. Non sono presenti autenticazione, backend, telefonate reali o salvataggio permanente. Il microfono non viene attivato. I dati della demo rimangono in memoria e si azzerano ricaricando la pagina. Il ritratto è dimostrativo e generato. Le icone delle categorie provengono dai materiali approvati su Drive: Voemi → D) Prodotto → Elementi APP → ICONE → Icone Stanze. Per Teatro viene usata l’icona Default, in assenza di un asset dedicato nella cartella.
 
 ## Identità visiva
 
