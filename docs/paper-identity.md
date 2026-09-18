@@ -10,9 +10,11 @@
 
 Prugna #2B0F2E, prugna paper #68354F, corallo #FF686B, corallo paper #DB8278, rosa #C47A87, avorio #F7F4EF, Ink #211C22, Muted #706671. Manrope. CTA prugna con testo bianco, controlli rialzati, bordi sottili e grana discreta; focus esplicito e stato premuto.
 
-Il simbolo V è ricostruito in SVG sul riferimento del brandbook per uso a piccola scala: mantiene piega e proporzioni, semplificando la materia secondo le indicazioni del manuale. Non è un master vettoriale originale consegnato dal brand. Logotipo come testo nativo Manrope.
+Il simbolo V visualizzato nell’app usa i pixel del logo originale estratto dal brandbook, con maschera SVG della sagoma. Il logotipo è testo Manrope. Il favicon mantiene la variante SVG semplificata.
 
-Le otto immagini Drive sono conservate senza modifiche in `dist/assets/paper/`. La finestra CSS mostra la scena e nasconde la scritta impressa nella tavola. Titolo, descrizione e disponibilità sono testo HTML accessibile; le card rimangono interamente cliccabili. Per una produzione finale, il brandbook prevede scene PNG trasparenti separate dalla superficie: le tavole attuali non lo sono.
+Le otto PNG Drive restano inalterate. `material.js` ricompone le superfici tramite finestre SVG: angoli e bordi provengono dalle immagini originali, la carta interna da una porzione senza figure e la scena da una finestra separata. Il titolo impresso nella PNG non compare: titolo, descrizione e disponibilità sono HTML. Il bordo decorativo adattivo mantiene l’irregolarità entro le quote del manuale; l’area cliccabile resta regolare. È una ricostruzione responsive dai riferimenti raster, non una libreria originale di asset trasparenti.
+
+Pulsanti, filtri, navigazione, pannelli, chip e controlli condividono livelli separati di superficie, grana, contorno e contenuto. I filtri sono avorio, con località corallo. La navigazione è avorio con tre destinazioni. La chiamata usa fondo prugna e due onde paper con nomi, colori e posizione stabili. I controlli includono microfono/muto, termina e opzioni.
 
 Mappatura Drive → asset:
 - (1) → agora.png
@@ -26,6 +28,12 @@ Mappatura Drive → asset:
 
 ## Navigazione e flussi
 
-Stanze · Chat · Profilo. Le connessioni restano raggiungibili dalla scheda Chat. Manteniamo preparazione, ricerca, conferma reciproca, chiamata di 3 minuti, continuazione, privacy e rivelazione. Le schermate fuori dalla home seguono il fondo avorio del brandbook. Microfono muto: anche segno diagonale, oltre allo stato e alla label.
+Stanze · Chat · Profilo. Le connessioni restano raggiungibili dalla scheda Chat. Manteniamo preparazione, ricerca, conferma reciproca, chiamata di 3 minuti, continuazione, privacy e rivelazione. Le altre schermate usano avorio, salvo la chiamata immersiva prugna mostrata nelle tavole 5 e 19. Microfono muto: anche segno diagonale, oltre allo stato e alla label.
 
 La natura dimostrativa dei dati e tutti i limiti del prototipo restano invariati. Il cambio di identità non attiva servizi reali.
+
+## Verifica della revisione materica
+
+Confrontate le tavole 2–5 e le schede di materiali, componenti, navigazione e categorie. Verificati Home a 320 e 390 px, filtri con errore persistente, ricerca, persona trovata, chiamata, opzioni, scelta reciproca, profilo e chat. Al 200% di testo la griglia passa a una colonna e i filtri a due colonne; nessuno scorrimento orizzontale nella Home a 390 px.
+
+I test del pilota coprono annullamento, disponibilità, limite di 180 secondi, continuazione reciproca, promemoria e blocco. Non costituiscono una certificazione completa di accessibilità.
