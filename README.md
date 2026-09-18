@@ -62,3 +62,7 @@ La nuova home rende esplicita la disponibilità demo e distingue tre temi inizia
 `dist/experience.js` e `dist/experience.css` contengono questa evoluzione. Tutte le azioni di servizio sono simulate e si azzerano al ricaricamento; non costituiscono sicurezza o verifica reale. La fotografia dimostrativa è scaricabile dal browser anche quando è sfocata: nel prodotto servirà un controllo di accesso lato server.
 
 [Protocollo di test e servizi da integrare](docs/pilot-test.md).
+
+## Paper identity v2
+
+Il redesign del 17 settembre applica il nuovo brandbook Paper v2: prugna, corallo, avorio, V piegata e navigazione Stanze / Chat / Profilo. Il gradiente della home riprende il riferimento fornito; le otto card provengono da Drive → Card Stanze. Vedi [riferimenti e scelte di implementazione](docs/paper-identity.md). `dist/paper.css` e `dist/paper.js` applicano la nuova identità mantenendo i percorsi interattivi del pilota.
