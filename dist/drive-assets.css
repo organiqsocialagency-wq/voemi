@@ -1,0 +1,28 @@
+/* Source PNG edges and grain replace the generated decorative contours. */
+.has-material,.paper-card,.large-art{box-shadow:none!important}
+.has-material>.material-layer{filter:drop-shadow(0 3px 4px #2b0f2e20);border-radius:0!important}
+.primary:active>.material-layer,.secondary:active>.material-layer{filter:brightness(.92) drop-shadow(0 1px 2px #2b0f2e18)}
+.primary:disabled>.material-layer{filter:grayscale(.75);opacity:.3!important}
+.primary[aria-busy=true]>.material-layer{filter:none;opacity:1!important}
+.paper-card .category-art{mask-image:none!important;min-height:108px;height:130px;aspect-ratio:auto;margin:14px 14px 0;width:calc(100% - 28px)}
+.paper-card .category-art .original-scene{width:100%;height:100%;display:block}
+.topic-view .large-art,.postcall-art .large-art{padding:14px;aspect-ratio:1/1;mask-image:none!important}
+.large-art .original-scene{width:100%;height:100%;display:block}
+.paper-mark{width:48px;height:40px;filter:none}
+.full-paper-logo{width:96px;height:100px;stroke:none;display:block}
+body[data-view=onboarding] .topbar{height:136px}
+body[data-view=onboarding] .sidebar .brand{justify-content:center}
+.png-input-shell{display:block;position:relative;isolation:isolate;border-radius:16px;min-width:0;width:100%}
+.png-input-shell input,.png-input-shell select{background:transparent!important;background-image:none!important;box-shadow:none!important;width:100%;position:relative;z-index:1;margin:0;border:1px solid #706671!important}
+.range-pair>.png-input-shell{flex:1;width:0}
+.composer>.png-input-shell{flex:1;width:0}
+.png-input-shell input[aria-invalid=true]{border-color:#b42336!important}
+.call .control.end>span{background:none!important;border:0!important;box-shadow:none!important}
+.call .control.end>span>svg:not(.material-layer){width:76px!important;height:76px!important;transform:none!important;max-width:none;flex-shrink:0}
+.call .control>span>svg:not(.material-layer){width:30px;height:30px}
+.sidebar nav button.active{background:#f7f4ef!important;color:#2b0f2e!important}
+body[data-view=home] .paper-filters button:nth-child(3){color:#2b0f2e}
+#mobile-nav button svg,.sidebar nav svg{fill:none!important;stroke:none!important}
+.secondary>svg:not(.material-layer){width:24px;height:24px;flex-shrink:0}
+@media(min-width:761px){.paper-card .category-art{height:200px}}
+@media(max-width:350px){.paper-card .category-art{height:110px;min-height:110px}}

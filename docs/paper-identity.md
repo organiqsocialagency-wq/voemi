@@ -1,3 +1,21 @@
+## Aggiornamento: PNG originali da Drive, 20 settembre 2026
+
+Le superfici ricostruite della precedente versione sono sostituite dai PNG originali della cartella Voemi / ICONE, senza ridisegnarne colori, grana o contorni.
+
+- Fonte: https://drive.google.com/drive/folders/1eJzWFmpTF_dmPft0E8F1kq0yz-x_wzXp
+- 8 categorie trasparenti: ciascuna nella propria stanza e nella relativa scheda dettaglio.
+- 12 icone UI: navigazione, filtri, indietro/avanti, conferma, chiudi, microfono, muto, audio, altro e termina.
+- 2 loghi: simbolo nell’intestazione e favicon; logo completo nell’onboarding.
+- 7 superfici: carta fine/liscia/ruvida, pulsante prugna/avorio, navigazione e campi input.
+
+Originali conservati in `dist/assets/drive/`. Il manifest registra dimensioni, finestra di visualizzazione e SHA-256 di ogni file. I PNG non sono stati modificati: le finestre SVG eliminano solo lo spazio trasparente esterno; per icone e scene si mantengono le proporzioni. Le superfici si adattano in nove porzioni, conservando i bordi e gli angoli originali. Testi e controlli rimangono elementi accessibili e interattivi.
+
+Implementazione: `drive-assets.js` e `drive-assets.css`, caricati dopo gli strati precedenti. Il gradiente resta sullo sfondo home come richiesto.
+
+Verifica: test pilota superati; controllo browser dei filtri, stanza Agorà, ricerca, persona trovata, chiamata, muto, opzioni audio e feedback finale. Nessun errore JavaScript osservato; nessuno sbordamento orizzontale a 320 px.
+
+---
+
 # Voemi Paper v2 — implementazione
 
 ## Riferimenti
