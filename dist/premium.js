@@ -2,8 +2,19 @@
 state.premium=false;
 state.radius=25;
 state.freeCity=state.city;
+const premiumSymbols={
+ pin:'<path d="M12 22s8-9 8-14a8 8 0 0 0-16 0c0 5 8 14 8 14Z" fill="currentColor" stroke="none"/><circle cx="12" cy="8" r="3" fill="#68354f" stroke="none"/>',
+ radius:'<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="5" fill="currentColor" stroke="none"/>',
+ person:'<circle cx="12" cy="7" r="4" fill="currentColor" stroke="none"/><path d="M4 22v-3a8 8 0 0 1 16 0v3Z" fill="currentColor" stroke="none"/>',
+ filters:'<path d="M2 5h20M2 12h20M2 19h20"/><circle cx="8" cy="5" r="2" fill="currentColor"/><circle cx="16" cy="12" r="2" fill="currentColor"/><circle cx="9" cy="19" r="2" fill="currentColor"/>',
+ eye:'<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12Z" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="4" fill="#68354f" stroke="none"/><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/>',
+ bell:'<path d="M4 18h16l-2-4V9a6 6 0 0 0-12 0v5Z" fill="currentColor"/><path d="M10 22h4M12 1v2"/>',
+ bookmark:'<path d="M5 3h14v19l-7-5-7 5Z" fill="currentColor" stroke-linejoin="round"/>'
+};
+function premiumRow(symbol,title,copy){return `<li class="premium-row"><span class="premium-medallion" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">${premiumSymbols[symbol]}</svg></span><div><strong>${title}</strong><span>${copy}</span></div></li>`}
 function openPremium(){
- panel('Voemi Premium',`<p class="lead">Più libertà di scegliere dove nasce la prossima conversazione.</p><p class="premium-status">${state.premium?'Premium attivo nella demo':'Il tuo piano: Base'}</p><h3>Prova nella demo</h3><ul class="premium-benefits"><li><strong>Scegli la città</strong><span>Esplora conversazioni anche fuori dalla tua zona.</span></li><li><strong>Decidi la distanza</strong><span>Imposta un raggio di 5, 10, 25, 50 o 100 km.</span></li></ul><h3>Vantaggi proposti per il piano</h3><p class="microcopy">In progettazione: queste funzioni non sono ancora attive.</p><ul class="premium-benefits"><li><strong>Anteprima del profilo</strong><span>Foto anticipate, se l’altra persona ne consente la visibilità.</span></li><li><strong>Filtri di affinità avanzati</strong><span>Lingue, interessi condivisi e intenzioni di incontro.</span></li><li><strong>Modalità discreta</strong><span>Più controllo sulla tua disponibilità e visibilità.</span></li><li><strong>Avvisi personalizzati</strong><span>Scegli temi e orari per sapere quando tornare.</span></li><li><strong>Preferenze salvate</strong><span>Passa rapidamente tra città e ricerche preferite.</span></li></ul><p class="microcopy">Prezzo da definire. Nessun acquisto o addebito nella demo.</p><button class="primary" onclick="togglePremiumDemo()">${state.premium?'Torna al piano Base':'Prova Premium nella demo'}</button><p class="microcopy">Blocco, segnalazioni e protezione del numero restano disponibili per tutti.</p>`);
+ panel('Voemi Premium',`<div class="premium-sheet"><p class="premium-intro">Più libertà di scegliere dove nasce la prossima conversazione.</p><div class="premium-plan">Il tuo piano: <strong>${state.premium?'Premium · demo':'Base'}</strong></div><section class="premium-group premium-trial"><h3>Prova nella demo</h3><ul class="premium-benefits">${premiumRow('pin','Scegli la città','Esplora conversazioni anche fuori dalla tua zona.')}${premiumRow('radius','Decidi la distanza','Imposta un raggio di 5, 10, 25, 50 o 100 km.')}</ul></section><section class="premium-group"><h3>Vantaggi proposti per il piano</h3><p class="premium-proposed">In progettazione: queste funzioni non sono ancora attive.</p><ul class="premium-benefits">${premiumRow('person','Anteprima del profilo','Foto anticipate, se l’altra persona ne consente la visibilità.')}${premiumRow('filters','Filtri di affinità avanzati','Lingue, interessi condivisi e intenzioni di incontro.')}${premiumRow('eye','Modalità discreta','Più controllo sulla tua disponibilità e visibilità.')}${premiumRow('bell','Avvisi personalizzati','Scegli temi e orari per sapere quando tornare.')}${premiumRow('bookmark','Preferenze salvate','Passa rapidamente tra città e ricerche preferite.')}</ul></section><p class="premium-note">Prezzo da definire. Nessun acquisto o addebito nella demo.</p><button class="primary" onclick="togglePremiumDemo()">${state.premium?'Torna al piano Base':'Prova Premium nella demo'}</button><p class="premium-note premium-safety">Blocco, segnalazioni e protezione del numero restano disponibili per tutti.</p></div>`);
+ const dialog=document.getElementById('filter-dialog');dialog.scrollTop=0;applyMaterials();
 }
 function togglePremiumDemo(){
  if(!state.premium){state.freeCity=state.city;state.premium=true}else{state.premium=false;state.city=state.freeCity;state.radius=25}
@@ -23,6 +34,7 @@ openFilters=function(){
 const materialsBeforePremium=applyMaterials;
 applyMaterials=function(){
  materialsBeforePremium();
+ document.querySelectorAll('.premium-group,.premium-row,.premium-plan').forEach(el=>{materialObserver.observe(el);paperLayer(el)});
  const city=document.getElementById('profile-city');
  if(city){city.disabled=!state.premium;if(!state.premium&&!document.getElementById('profile-premium-note'))(city.closest('.png-input-shell')||city).insertAdjacentHTML('afterend','<p id="profile-premium-note" class="microcopy">Cambio città disponibile con <button type="button" class="small-link" onclick="openPremium()">Premium</button>.</p>')}
 };

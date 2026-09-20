@@ -66,3 +66,27 @@ body[data-view=home] .paper-filters button:nth-child(3){color:#2b0f2e}
 .premium-status{font-weight:700;color:#68354f}
 input:disabled,select:disabled{opacity:.55;cursor:not-allowed}
 @media(min-width:761px){.paper-card>h2{min-height:58px;line-height:29px;margin-inline:18px}}
+/* Premium reference: layered ivory paper, rose trial panel and plum medallions. */
+dialog:has(.premium-sheet){width:min(780px,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 40px);padding:32px;color:#2b0f2e;background-color:#f7f4ef!important;overflow-y:auto;scrollbar-width:thin}
+dialog:has(.premium-sheet)::backdrop{background:#2b0f2eb3;backdrop-filter:blur(7px)}
+dialog:has(.premium-sheet) .dialog-head{align-items:flex-start;gap:16px;margin-bottom:4px}
+dialog:has(.premium-sheet) .dialog-head h2{font-size:42px;font-weight:800;line-height:1.12;letter-spacing:-1px}
+dialog:has(.premium-sheet) .dialog-head .icon-button{flex-shrink:0;min-width:40px;min-height:40px}
+.premium-intro{font-size:18px;line-height:1.45;margin:8px 0 16px;color:#2b0f2e}
+.premium-plan{display:inline-block;padding:9px 18px;margin-bottom:20px;font-size:16px}
+.premium-group{padding:20px;margin-bottom:16px;position:relative}
+.premium-group h3{margin:0 0 8px;font-weight:800;font-size:23px;line-height:1.25}
+.premium-trial.has-material{background-color:#eddddd!important;border-radius:16px}
+.premium-trial>.material-layer{opacity:.65!important;mix-blend-mode:multiply!important}
+.premium-proposed{margin:0 0 14px;font-size:14px;color:#68354f;line-height:1.5}
+.premium-group .premium-benefits{margin:12px 0 0;gap:9px}
+.premium-benefits .premium-row{display:flex;gap:18px;align-items:center;padding:12px 16px;min-height:76px}
+.premium-row>div{min-width:0;display:grid;gap:3px}
+.premium-row strong{font-size:18px;line-height:1.25;color:#2b0f2e;font-weight:800}
+.premium-row>div>span{font-size:14px;line-height:1.45;color:#68354f}
+.premium-medallion{display:grid;place-items:center;flex:0 0 52px;width:52px;height:52px;border-radius:50%;background:#68354f url('assets/paper/grain.svg');box-shadow:0 2px 4px #2b0f2e30,inset 0 0 0 1px #2b0f2e20;color:#fff8ed!important}
+.premium-medallion svg{width:26px;height:26px}
+.premium-note{text-align:center;font-size:13px;line-height:1.5;color:#68354f;margin:18px 0 10px}
+.premium-sheet>.primary{width:100%;font-size:19px;min-height:56px}
+.premium-safety{margin:12px 0 0}
+@media(max-width:480px){dialog:has(.premium-sheet){padding:22px 16px;max-height:calc(100dvh - 24px);width:calc(100vw - 24px)}dialog:has(.premium-sheet) .dialog-head h2{font-size:30px;letter-spacing:-.5px}.premium-intro{font-size:15px}.premium-group{padding:14px 10px}.premium-group h3{font-size:20px}.premium-benefits .premium-row{padding:12px 10px;gap:11px}.premium-medallion{flex-basis:42px;width:42px;height:42px}.premium-medallion svg{width:23px;height:23px}.premium-row strong{font-size:16px}.premium-row>div>span{font-size:13px}.premium-sheet>.primary{font-size:16px}}
