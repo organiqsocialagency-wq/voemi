@@ -63,3 +63,7 @@
 ## Limiti del mockup
 
 Nessuna autenticazione, verifica d’identità, connessione audio, pagamento, notifica, moderazione o geolocalizzazione reale. Le affinità e gli orari memorizzano preferenze di interfaccia e non eseguono algoritmi remoti. I dati si azzerano ricaricando la pagina. La demo di chiamate illimitate illustra il vantaggio del piano, senza introdurre una quota commerciale arbitraria per Base.
+
+## Due chiacchiere
+Macrosection before thematic rooms, no additional navigation item. Reuses the category → ready → microphone → search → found → call → mutual choice flow. Home illustration is a generated edit of the original Agora PNG, with an empty table and coral/mauve paper figures; original remains intact.
+Demo shared pool deduplicates people and enforces gender, age, city, radius and free-conversation consent. Interests are optional. Thematic ready screens expose an unchecked opt-in; when enabled, an eligible free-conversation participant can be selected. Availability, participants and consent fixtures are simulated, not a live queue. New tests cover pool eligibility.

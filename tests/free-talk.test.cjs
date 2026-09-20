@@ -1,0 +1,14 @@
+const vm=require('node:vm'),fs=require('node:fs'),assert=require('node:assert/strict');
+const source=fs.readFileSync('dist/free-talk.js','utf8');
+const context=vm.createContext({});const run=s=>vm.runInContext(s,context);
+run("const FREE_TALK=8;const state={city:'Roma',min:24,max:32,preference:'Donne',radius:25,interests:['Gaming']};"+source.slice(source.indexOf('const freeTalkPeople='),source.indexOf('const beforeFreeAvailable=')));
+assert.equal(run('freeTalkEligible().length'),1);
+assert.equal(run('freeTalkEligible()[0].name'),'Giulia','A theme participant can match after explicitly opting in, without shared interests');
+run('freeTalkPeople[0].openTalk=false');assert.equal(run('freeTalkEligible().length'),0,'No cross-topic match without consent');
+run('freeTalkPeople[0].openTalk=true;freeTalkPeople.push(freeTalkPeople[0])');assert.equal(run('freeTalkEligible().length'),1,'Unique people, not summed queues');
+run('state.radius=2');assert.equal(run('freeTalkEligible().length'),0);
+run("state.radius=25;state.city='Milano'");assert.equal(run('freeTalkEligible().length'),0);
+run("state.city='Roma';state.min=29");assert.equal(run('freeTalkEligible().length'),0);
+run("state.min=24;state.preference='Uomini'");assert.equal(run('freeTalkEligible()[0].name'),'Luca');
+run('state.blocked=true');assert.equal(run('freeTalkEligible().length'),0);
+console.log('Passed: consent, audience, age, city, radius, blocking, deduplication and optional interests.');

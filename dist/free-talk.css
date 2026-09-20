@@ -1,0 +1,12 @@
+.paper-card.free-talk-card{width:100%;display:grid;grid-template-columns:minmax(0,1fr) 38%;grid-template-rows:auto 1fr;text-align:left;margin:24px 0 28px;padding:8px 12px 16px;min-height:225px}
+.paper-card.free-talk-card>h2{grid-column:1;min-height:0;margin:16px 12px 10px;font-size:25px;line-height:1.2}
+.paper-card.free-talk-card .category-art{grid-column:2;grid-row:1 / 3;align-self:center;width:100%;height:185px;min-height:0;margin:16px 0 0}
+.paper-card.free-talk-card .category-content{grid-column:1;padding:0 12px}
+.paper-card.free-talk-card p{min-height:0;margin:8px 0;font-size:13px;line-height:1.5}
+.paper-card.free-talk-card .free-talk-description{font-size:15px;margin:0 0 16px}
+.paper-card.free-talk-card .category-footer{font-size:12px;gap:4px}
+.topic-section-title{font-size:20px;font-weight:800;margin:0 0 18px}
+.free-talk-consent{display:flex;align-items:flex-start;gap:12px;text-align:left;margin:24px 0;cursor:pointer}
+.free-talk-consent input{width:22px;height:22px;flex:0 0 22px;accent-color:#63203f;margin:3px 0}
+.free-talk-consent small{display:block;font-size:13px;line-height:1.6;margin-top:6px;font-weight:400}
+@media(max-width:350px){.paper-card.free-talk-card{padding-inline:2px;grid-template-columns:60% 40%}.paper-card.free-talk-card>h2{font-size:21px}.paper-card.free-talk-card .category-art{height:140px}.paper-card.free-talk-card .free-talk-description{font-size:13px}}
