@@ -31,3 +31,13 @@ body[data-view=home] .paper-filters button:nth-child(3){color:#2b0f2e}
 #mobile-nav .footer-paper-outline{position:absolute;left:8px;top:5px;bottom:5px;width:calc((100% - 16px)/3);pointer-events:none;z-index:0;padding:4px;border-radius:999px;background:none!important;isolation:isolate;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude}
 #mobile-nav .footer-paper-outline>.material-layer{opacity:1!important;filter:none;mix-blend-mode:normal}
 #mobile-nav button{z-index:1}
+
+/* Theme cards: lower the illustrations, keep the two status rows distinct. */
+.paper-card .category-art{margin-top:24px}
+.paper-card h2{min-height:48px;display:flex;align-items:flex-end}
+.paper-card p{min-height:36px}
+.paper-card .category-footer{padding-top:8px;line-height:18px}
+#mobile-nav .footer-paper-outline{top:6px;bottom:6px;padding:0;border-radius:12px;mask:none;mask-composite:add}
+#mobile-nav .footer-paper-outline>.material-layer{filter:sepia(.12) drop-shadow(0 1px 2px #68354f45);opacity:1!important}
+@media(min-width:761px){.paper-card h2{min-height:58px}}
+.paper-card p,.paper-card .category-footer{hyphens:none;overflow-wrap:normal;word-break:normal}

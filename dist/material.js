@@ -40,6 +40,7 @@ function paperLayer(el){
  layer.innerHTML=center+sides+`</g>${category?'':`<path d="${contour}" fill="none" stroke="var(--paper-stroke,#b8a69b)" stroke-opacity="var(--paper-stroke-opacity,.35)" stroke-width="1"/>`}`;
  el.querySelector(':scope > .material-layer')?.remove();el.prepend(layer);el.classList.add('has-material');
 }
+const originalCategoryPaperLayer=paperLayer;
 const materialObserver=new ResizeObserver(entries=>entries.forEach(({target})=>paperLayer(target)));
 function applyMaterials(){
  document.body.classList.toggle('large-type',parseFloat(getComputedStyle(document.documentElement).fontSize)>24);

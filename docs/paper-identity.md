@@ -1,3 +1,15 @@
+## Revisione card e footer, 20 settembre 2026
+
+- Agorà diventa Politica e Sociale in categorie, interessi e copy del pilota.
+- Ogni card presenta il numero demo di ragazze/ragazzi/persone connesse secondo il filtro, seguito dai compatibili in attesa. Le stanze non disponibili riportano zero compatibili; la natura simulata resta visibile.
+- Ogni tema usa grana e bordi della sua immagine originale in Card Stanze, con tinta applicata solo al livello della carta: terracotta, rosa cinema, lavanda musica, verde acqua sport, lilla anime, pergamena cultura, rosa teatro, salvia gaming. Gli originali restano inalterati.
+- Le illustrazioni sono abbassate di 10 px.
+- Sport usa `Voemi_Categoria_sport-v2.png`, variante ImageGen del PNG originale: figura destra maschile con T-shirt, sinistra femminile, composizione e palette conservate. Non è un nuovo originale del Drive.
+- La selezione footer è un tassello di carta rettangolare con angoli morbidi, animato tra sezioni; nessun ovale o puntino.
+- Verificati testi per Donne/Uomini e assenza di overflow a 320 px; test pilota superati.
+
+---
+
 ## Aggiornamento: PNG originali da Drive, 20 settembre 2026
 
 Le superfici ricostruite della precedente versione sono sostituite dai PNG originali della cartella Voemi / ICONE, senza ridisegnarne colori, grana o contorni.
