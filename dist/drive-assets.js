@@ -25,7 +25,7 @@ paperLayer=function(el){
  else if(el.matches('.paper-card,.large-art'))file=`Voemi_Superficie_carta-${surfaceKinds[Number(el.dataset.room??el.dataset.art)]}.png`;
  else if(el.matches('#mobile-nav'))file='Voemi_Barra_navigazione.png';
  else if(el.matches('.png-input-shell'))file='Voemi_Campo_input.png';
- else if(el.matches('.primary,.interest.selected,.choice.selected,.inbox-tabs .selected,.bubble.mine,.composer button'))file='Voemi_Pulsante_scuro_prugna.png';
+ else if(el.matches('.primary,.premium-trigger,.interest.selected,.choice.selected,.inbox-tabs .selected,.bubble.mine,.composer button'))file='Voemi_Pulsante_scuro_prugna.png';
  else if(el.matches('button,.call .control>span,.pill,.duration-seal'))file='Voemi_Superficie_carta-fine.png';
  const darkPaper=file==='Voemi_Pulsante_scuro_prugna.png';
  if(darkPaper)file='Voemi_Superficie_carta-fine.png';
