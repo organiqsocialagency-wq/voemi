@@ -45,3 +45,7 @@ body[data-view=home] .paper-filters button:nth-child(3){color:#2b0f2e}
 /* Approved light paper edge replaces the plum outline on ivory controls. */
 .light-paper-edge{border:0!important;border-radius:12px!important}
 .light-paper-edge>.material-layer{filter:sepia(.12) drop-shadow(0 1px 2px #68354f45)!important}
+/* Navigation state: bold current label, gray inactive PNG icons. */
+#mobile-nav button.active span,.sidebar nav button.active span{font-weight:700!important}
+#mobile-nav button:not(.active)>svg,.sidebar nav button:not(.active)>svg{filter:grayscale(1);opacity:.65}
+#mobile-nav button.active>svg,.sidebar nav button.active>svg{filter:none;opacity:1}
