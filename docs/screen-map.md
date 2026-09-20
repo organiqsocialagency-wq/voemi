@@ -1,0 +1,65 @@
+# Voemi — mappa delle schermate
+
+## Accessi
+
+- **Profilo → Impostazioni e Premium**: tutte le preferenze, piano e sicurezza.
+- **Profilo → Esplora tutte le schermate**: catalogo dei percorsi e degli stati di errore; pulsante esplicito per caricare una conversazione fittizia.
+- **Voemi Premium**: vantaggi cliccabili e percorso di abbonamento simulato.
+- **Chat** dopo un match: anteprima dei messaggi, con conteggio dei non letti.
+- **Persona trovata**: anteprima foto con consenso simulato.
+- **Preparazione chiamata**: microfono disponibile/non disponibile, senza chiedere permessi reali.
+- **Opzioni chiamata**: interruzione simulata e recupero.
+
+## Nuove schermate
+
+- `discoveryPaused`
+- `settings`
+- `subscription`
+- `checkout`
+- `paymentPending`
+- `paymentFailed`
+- `premiumSuccess`
+- `receipt`
+- `cancelPlan`
+- `planCancelled`
+- `locationSettings`
+- `affinity`
+- `discretion`
+- `privacySettings`
+- `alerts`
+- `alertsSaved`
+- `savedSearches`
+- `chatPreview`
+- `photoPreview`
+- `unlimited`
+- `blockedProfiles`
+- `account`
+- `welcome`
+- `login`
+- `verifyContact`
+- `verifyCode`
+- `verifyIdentity`
+- `verifiedDone`
+- `microphoneSetup`
+- `microphoneDenied`
+- `callInterrupted`
+- `noMatch`
+- `reportDone`
+- `demoIndex`
+
+## Comportamenti verificati
+
+- Acquisto simulato: attesa, esito positivo, errore, riprova, annullamento durante l’attesa senza attivazione tardiva.
+- Ritorno a Base: ripristino della città originaria e distanza standard; blocco dei vantaggi Premium.
+- Posizione, affinità e avvisi salvati nella sessione; ricerche nominate, riapplicabili ed eliminabili.
+- Disponibilità disattivata: la ricerca incontra una schermata di pausa con possibilità di riattivazione.
+- L’anteprima chat non marca il messaggio come letto; aprire la conversazione lo marca come letto nella demo.
+- Foto anticipata bloccata in assenza di consenso della persona dimostrativa.
+- Verifica: codice errato, codice demo 123456, verifica identità senza fotocamera e risultato.
+- Segnalazione: conferma locale e blocco; elenco bloccati e sblocco.
+- Tutti i template e le azioni inline compilano; test pilota e nuovi test superati.
+- Controllo visuale mobile di checkout, modalità discreta e anteprima chat; assenza di overflow a 320 px sul percorso di verifica; nessun errore JavaScript osservato.
+
+## Limiti del mockup
+
+Nessuna autenticazione, verifica d’identità, connessione audio, pagamento, notifica, moderazione o geolocalizzazione reale. Le affinità e gli orari memorizzano preferenze di interfaccia e non eseguono algoritmi remoti. I dati si azzerano ricaricando la pagina. La demo di chiamate illimitate illustra il vantaggio del piano, senza introdurre una quota commerciale arbitraria per Base.
