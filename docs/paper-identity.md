@@ -67,3 +67,13 @@ La natura dimostrativa dei dati e tutti i limiti del prototipo restano invariati
 Confrontate le tavole 2–5 e le schede di materiali, componenti, navigazione e categorie. Verificati Home a 320 e 390 px, filtri con errore persistente, ricerca, persona trovata, chiamata, opzioni, scelta reciproca, profilo e chat. Al 200% di testo la griglia passa a una colonna e i filtri a due colonne; nessuno scorrimento orizzontale nella Home a 390 px.
 
 I test del pilota coprono annullamento, disponibilità, limite di 180 secondi, continuazione reciproca, promemoria e blocco. Non costituiscono una certificazione completa di accessibilità.
+
+## Card e Premium (revisione successiva)
+
+Titolo bold sopra l’illustrazione, poi persone connesse e compatibili in attesa. Le carte mantengono le texture ma usano esclusivamente tonalità di bianco, neutralizzando i colori dei raster sul solo livello carta.
+
+Premium sostituisce il pulsante filtri a destra. Genere ed età aprono ancora i filtri; città e raggio (5–100 km) sono disabilitati nel piano Base, inclusa la modifica città dal profilo. La demo permette di attivare Premium senza acquisti e di ritornare al piano Base, ripristinando città iniziale e raggio standard. Lo stato è limitato alla sessione della pagina e la distanza non usa GPS o matching geografico reale.
+
+Il pannello separa i controlli dimostrabili dai vantaggi proposti non implementati: anteprima profilo con consenso, filtri di affinità, modalità discreta, avvisi e preferenze salvate. Prezzo da definire.
+
+Verificati nel browser: campi Base bloccati, attivazione Premium, salvataggio raggio 50 km, ritorno a Base e nuovo blocco. Test del pilota superati; nessun errore JavaScript osservato.

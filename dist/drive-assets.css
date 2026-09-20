@@ -53,3 +53,16 @@ body[data-view=home] .paper-filters button:nth-child(3){color:#2b0f2e}
 
 /* Selected and idle controls share the exact same paper silhouette. */
 .dark-paper-edge>.material-layer{filter:drop-shadow(0 1px 2px #68354f45)!important}
+/* Editorial order: heading, illustration, connected and waiting counts. */
+.paper-card>h2{font-weight:800;align-items:flex-start;min-height:48px;margin:20px 14px 0;line-height:24px;align-self:stretch}
+.paper-card .category-art{margin-top:10px;margin-bottom:12px}
+.paper-filters{grid-template-columns:1fr .85fr 1.15fr 1fr;gap:8px}
+.paper-filters .premium-trigger{font-weight:800;font-size:12px;padding:8px}
+.paper-filters button:nth-child(3){display:flex;align-items:center;justify-content:center;gap:4px;min-width:0}
+.paper-filters button:nth-child(3)>svg{width:14px;height:14px;flex-shrink:0}
+.premium-benefits{list-style:none;padding:0;margin:12px 0 24px;display:grid;gap:16px}
+.premium-benefits li{display:grid;gap:4px;font-size:14px;line-height:1.5}
+.premium-benefits span{color:#706671}
+.premium-status{font-weight:700;color:#68354f}
+input:disabled,select:disabled{opacity:.55;cursor:not-allowed}
+@media(min-width:761px){.paper-card>h2{min-height:58px;line-height:29px;margin-inline:18px}}

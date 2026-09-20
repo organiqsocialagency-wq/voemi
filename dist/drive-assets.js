@@ -15,9 +15,9 @@ paperLayer=function(el){
  if(el.matches('.paper-card,.large-art')){
   const i=Number(el.dataset.room??el.dataset.art);
   el.dataset.paper=paperFiles[i];originalCategoryPaperLayer(el);
-  const colors=['eed5c4','e6c3cb','dacde8','cbdedb','ddd0ec','eddfb8','e7c9d4','cfdbbc'];
+  const colors=['faf7f0','f6f5f3','f8f8f7','f2f4f3','f7f7f8','faf8f2','f6f4f1','f4f5f1'];
   const rgb=colors[i].match(/../g).map(hex=>parseInt(hex,16)/247),layer=el.querySelector(':scope > .material-layer'),id=`room-tint-${++materialId}`;
-  layer.innerHTML=`<defs><filter id="${id}" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="linear" slope="${rgb[0]}"/><feFuncG type="linear" slope="${rgb[1]}"/><feFuncB type="linear" slope="${rgb[2]}"/></feComponentTransfer></filter></defs><g filter="url(#${id})">${layer.innerHTML}</g>`;
+  layer.innerHTML=`<defs><filter id="${id}" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="linear" slope="${rgb[0]}"/><feFuncG type="linear" slope="${rgb[1]}"/><feFuncB type="linear" slope="${rgb[2]}"/></feComponentTransfer></filter></defs><g filter="url(#${id})">${layer.innerHTML}</g>`;
   return;
  }
  let file='Voemi_Superficie_carta-fine.png';
