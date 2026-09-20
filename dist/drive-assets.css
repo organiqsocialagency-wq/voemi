@@ -50,3 +50,6 @@ body[data-view=home] .paper-filters button:nth-child(3){color:#2b0f2e}
 #mobile-nav button.active,#mobile-nav button.active span,.sidebar nav button.active,.sidebar nav button.active span{font-weight:800!important}
 #mobile-nav button:not(.active)>svg,.sidebar nav button:not(.active)>svg{filter:grayscale(1);opacity:.65}
 #mobile-nav button.active>svg,.sidebar nav button.active>svg{filter:none;opacity:1}
+
+/* Selected and idle controls share the exact same paper silhouette. */
+.dark-paper-edge>.material-layer{filter:drop-shadow(0 1px 2px #68354f45)!important}

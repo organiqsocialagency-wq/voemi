@@ -27,6 +27,9 @@ paperLayer=function(el){
  else if(el.matches('.png-input-shell'))file='Voemi_Campo_input.png';
  else if(el.matches('.primary,.interest.selected,.choice.selected,.inbox-tabs .selected,.bubble.mine,.composer button'))file='Voemi_Pulsante_scuro_prugna.png';
  else if(el.matches('button,.call .control>span,.pill,.duration-seal'))file='Voemi_Superficie_carta-fine.png';
+ const darkPaper=file==='Voemi_Pulsante_scuro_prugna.png';
+ if(darkPaper)file='Voemi_Superficie_carta-fine.png';
+ el.classList.toggle('dark-paper-edge',darkPaper);
  const lightPaper=file==='Voemi_Superficie_carta-fine.png';
  el.classList.toggle('light-paper-edge',lightPaper);
  if(el.matches('.call .control.end>span')){el.querySelector(':scope > .material-layer')?.remove();el.classList.remove('has-material');return;}
@@ -35,6 +38,7 @@ paperLayer=function(el){
  const r=Math.min(lightPaper?12:long?h/2:22,w/2,h/2),xs=[0,cutX,sw-cutX,sw],ys=[0,cutY,sh-cutY,sh],dx=[0,r,w-r,w],dy=[0,r,h-r,h];
  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.classList.add('material-layer');svg.setAttribute('viewBox',`0 0 ${w} ${h}`);svg.setAttribute('preserveAspectRatio','none');svg.setAttribute('aria-hidden','true');svg.setAttribute('focusable','false');
  let parts='';for(let y=0;y<3;y++)for(let x=0;x<3;x++)if(dx[x+1]>dx[x]&&dy[y+1]>dy[y])parts+=driveWindow(file,[dx[x],dy[y],dx[x+1]-dx[x]+.1,dy[y+1]-dy[y]+.1],[b[0]+xs[x],b[1]+ys[y],b[0]+xs[x+1],b[1]+ys[y+1]]);
+ if(darkPaper){const tint=`selected-paper-${++materialId}`;parts=`<defs><filter id="${tint}" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="linear" slope=".174"/><feFuncG type="linear" slope=".061"/><feFuncB type="linear" slope=".186"/></feComponentTransfer></filter></defs><g filter="url(#${tint})">${parts}</g>`;}
  svg.innerHTML=parts;el.querySelector(':scope > .material-layer')?.remove();el.prepend(svg);el.classList.add('has-material');el.dataset.pngSurface=file;
 };
 const previousDriveMaterials=applyMaterials;
