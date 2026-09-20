@@ -41,3 +41,7 @@ body[data-view=home] .paper-filters button:nth-child(3){color:#2b0f2e}
 #mobile-nav .footer-paper-outline>.material-layer{filter:sepia(.12) drop-shadow(0 1px 2px #68354f45);opacity:1!important}
 @media(min-width:761px){.paper-card h2{min-height:58px}}
 .paper-card p,.paper-card .category-footer{hyphens:none;overflow-wrap:normal;word-break:normal}
+
+/* Approved light paper edge replaces the plum outline on ivory controls. */
+.light-paper-edge{border:0!important;border-radius:12px!important}
+.light-paper-edge>.material-layer{filter:sepia(.12) drop-shadow(0 1px 2px #68354f45)!important}
