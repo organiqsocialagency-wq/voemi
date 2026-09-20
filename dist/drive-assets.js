@@ -12,7 +12,8 @@ loadArt=function(){document.querySelectorAll('[data-art]').forEach(el=>{el.style
 paperLayer=function(el){
  const w=el.clientWidth,h=el.clientHeight;if(!w||!h)return;
  let file='Voemi_Superficie_carta-fine.png';
- if(el.matches('.paper-card,.large-art'))file=`Voemi_Superficie_carta-${surfaceKinds[Number(el.dataset.room??el.dataset.art)]}.png`;
+ if(el.matches('.footer-paper-outline'))file='Voemi_Pulsante_scuro_prugna.png';
+ else if(el.matches('.paper-card,.large-art'))file=`Voemi_Superficie_carta-${surfaceKinds[Number(el.dataset.room??el.dataset.art)]}.png`;
  else if(el.matches('#mobile-nav'))file='Voemi_Barra_navigazione.png';
  else if(el.matches('.png-input-shell'))file='Voemi_Campo_input.png';
  else if(el.matches('.primary,.interest.selected,.choice.selected,.inbox-tabs .selected,.bubble.mine,.composer button'))file='Voemi_Pulsante_scuro_prugna.png';
@@ -35,3 +36,28 @@ applyMaterials=function(){
 toggleMute=function(){state.muted=!state.muted;const b=document.getElementById('mute');b.classList.toggle('toggled',state.muted);b.setAttribute('aria-pressed',String(state.muted));b.querySelector('label').textContent=state.muted?'Riattiva':'Microfono';b.querySelector('span > svg:not(.material-layer)').innerHTML=driveWindow(`Voemi_Icona_${state.muted?'muto':'microfono'}.png`,[2,2,20,20],null,"xMidYMid meet");document.querySelector('.voice-orb').classList.toggle('paused',state.muted)};
 callOptions=function(){panel('Opzioni della chiamata',`<button class="secondary" onclick="state.speaker=!state.speaker;callOptions()">${icon('volume')}Audio ${state.speaker?'attivo':'spento'} · ${state.speaker?'disattiva':'attiva'}</button><button class="secondary" onclick="safetyPanel()">Sicurezza · blocca o segnala</button>`)};
 render();
+
+// Keep one paper frame and animate its position across footer sections.
+const footerPaperFrame=document.createElement('span');
+footerPaperFrame.className='footer-paper-outline';
+footerPaperFrame.setAttribute('aria-hidden','true');
+let footerPaperIndex=0,footerPaperReady=false;
+const navWithDriveAssets=nav;
+nav=function(){
+ const footer=document.getElementById('mobile-nav');
+ const wasVisible=footer.clientHeight>0&&!document.body.classList.contains('no-bottom-nav');
+ const previous=footerPaperIndex;
+ navWithDriveAssets();
+ const buttons=[...footer.querySelectorAll('button')];
+ footerPaperIndex=Math.max(0,buttons.findIndex(button=>button.classList.contains('active')));
+ footer.append(footerPaperFrame);
+ footerPaperFrame.style.transform=`translateX(${footerPaperIndex*100}%)`;
+ paperLayer(footerPaperFrame);
+ if(footerPaperReady&&wasVisible&&previous!==footerPaperIndex&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  footerPaperFrame.getAnimations().forEach(animation=>animation.cancel());
+  footerPaperFrame.animate([{transform:`translateX(${previous*100}%)`},{transform:`translateX(${footerPaperIndex*100}%)`}],{duration:360,easing:'cubic-bezier(.22,.8,.25,1)'});
+ }
+ footerPaperReady=true;
+};
+materialObserver.observe(footerPaperFrame);
+nav();
