@@ -1,0 +1,12 @@
+#mobile-nav{grid-template-columns:repeat(4,minmax(0,1fr))}
+#mobile-nav button{min-width:0;flex:1}
+#mobile-nav button span{font-size:13px}
+.rooms-intro{text-align:center;margin:12px 0 28px;color:#e5d8df}
+.find-now{width:100%;margin-bottom:20px}
+.voice-composer{display:grid;gap:12px;margin:24px 0}
+.voice-actions{display:flex;gap:10px}.voice-actions>*{flex:1;padding:12px}
+.voice-bubble{display:flex;align-items:center;gap:10px;flex-wrap:wrap;min-width:220px;max-width:90%;padding:16px}
+.voice-play{border:0;background:transparent;color:inherit;font-size:20px;min-width:44px;min-height:44px;cursor:pointer}
+.audio-wave{display:flex;gap:3px;align-items:center;flex:1}.audio-wave i{width:3px;background:currentColor;border-radius:3px;opacity:.65}
+.voice-bubble .bubble-time{flex-basis:100%;text-align:right}
+body:is([data-view="home"],[data-view="rooms"]) .free-talk-card{margin-top:28px}

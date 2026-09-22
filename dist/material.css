@@ -28,8 +28,8 @@ input,select{background-image:url('assets/paper/grain.svg')!important;background
 .paper-home{max-width:640px}
 .home.paper-home h1{margin-bottom:22px}
 .paper-filters{gap:8px;grid-template-columns:1fr 1fr 1fr 48px;margin-bottom:18px}
-body[data-view=home] .paper-filters button{background:#f7f4ef;color:#2b0f2e;border-color:#d8cfd4;border-radius:20px;font-weight:600;box-shadow:0 3px 8px #211c2233,0 1px 0 #211c221f}
-body[data-view=home] .paper-filters button:nth-child(3){background:#db8278;color:#211c22;border-color:#db8278}
+body:is([data-view="home"],[data-view="rooms"]) .paper-filters button{background:#f7f4ef;color:#2b0f2e;border-color:#d8cfd4;border-radius:20px;font-weight:600;box-shadow:0 3px 8px #211c2233,0 1px 0 #211c221f}
+body:is([data-view="home"],[data-view="rooms"]) .paper-filters button:nth-child(3){background:#db8278;color:#211c22;border-color:#db8278}
 .paper-home .category-grid{gap:12px}
 .category.paper-card{position:relative;background:none!important;border:0;overflow:visible;border-radius:22px;min-height:212px;box-shadow:0 3px 10px #211c2226,0 1px 1px #211c2230;transition:box-shadow 200ms,transform 200ms}
 .paper-card>.material-layer{opacity:1;mix-blend-mode:normal;border-radius:0}
@@ -121,11 +121,11 @@ dialog .material-layer{border-radius:24px}
  .topbar{height:88px;padding:20px;justify-content:center}
  .home.paper-home h1{font-size:1.875rem;line-height:2.375rem}
  .paper-filters button{font-size:0.875rem;line-height:1.25rem;padding:12px 8px;min-height:48px}
- #mobile-nav,body[data-view=home] #mobile-nav{background:#f7f4ef;border:0;border-radius:24px;min-height:64px;padding:4px 8px;bottom:max(16px,env(safe-area-inset-bottom));box-shadow:0 3px 8px #211c2240,0 1px 0 #211c221f}
+ #mobile-nav,body:is([data-view="home"],[data-view="rooms"]) #mobile-nav{background:#f7f4ef;border:0;border-radius:24px;min-height:64px;padding:4px 8px;bottom:max(16px,env(safe-area-inset-bottom));box-shadow:0 3px 8px #211c2240,0 1px 0 #211c221f}
  #mobile-nav>.material-layer{opacity:.27;mix-blend-mode:multiply}
- #mobile-nav button,body[data-view=home] #mobile-nav button{color:#706671;min-height:56px;font-size:0.75rem;line-height:1.0rem}
- #mobile-nav button.active,body[data-view=home] #mobile-nav button.active{color:#2b0f2e;font-weight:600}
- #mobile-nav button.active svg,body[data-view=home] #mobile-nav button.active svg{fill:#2b0f2e;stroke:#2b0f2e}
+ #mobile-nav button,body:is([data-view="home"],[data-view="rooms"]) #mobile-nav button{color:#706671;min-height:56px;font-size:0.75rem;line-height:1.0rem}
+ #mobile-nav button.active,body:is([data-view="home"],[data-view="rooms"]) #mobile-nav button.active{color:#2b0f2e;font-weight:600}
+ #mobile-nav button.active svg,body:is([data-view="home"],[data-view="rooms"]) #mobile-nav button.active svg{fill:#2b0f2e;stroke:#2b0f2e}
  #mobile-nav button.active:after{bottom:0;background:#ff686b}
  .flow{min-height:0}
  .flow h1,.call h1,.matched h1{font-size:1.875rem;line-height:2.375rem}
@@ -147,7 +147,7 @@ dialog .material-layer{border-radius:24px}
 .primary.has-material:active{--paper-fill:#211c22}
 .primary.has-material:disabled{--paper-fill:#e5d8df;--paper-grain:.08;--paper-blend:multiply;--paper-stroke-opacity:0}
 .secondary.has-material{--paper-stroke:#2b0f2e;--paper-stroke-opacity:1}
-body[data-view=home] .paper-filters button:nth-child(3){--paper-fill:#db8278;--paper-blend:soft-light;--paper-grain:.4;--paper-stroke:#db8278}
+body:is([data-view="home"],[data-view="rooms"]) .paper-filters button:nth-child(3){--paper-fill:#db8278;--paper-blend:soft-light;--paper-grain:.4;--paper-stroke:#db8278}
 .call .control.end>span{--paper-fill:#ff686b;--paper-blend:soft-light;--paper-grain:.4;--paper-stroke:#db8278}
 .call .control.toggled>span{--paper-fill:#e5d8df}
 .has-material:disabled{box-shadow:none}

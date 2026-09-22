@@ -67,3 +67,7 @@ Nessuna autenticazione, verifica d’identità, connessione audio, pagamento, no
 ## Due chiacchiere
 Macrosection before thematic rooms, no additional navigation item. Reuses the category → ready → microphone → search → found → call → mutual choice flow. Home illustration is a generated edit of the original Agora PNG, with an empty table and coral/mauve paper figures; original remains intact.
 Demo shared pool deduplicates people and enforces gender, age, city, radius and free-conversation consent. Interests are optional. Thematic ready screens expose an unchecked opt-in; when enabled, an eligible free-conversation participant can be selected. Availability, participants and consent fixtures are simulated, not a live queue. New tests cover pool eligibility.
+
+## Four macrosections and voice-only chat
+Navigation is Stanze → Trova → Chat → Profilo. Trova (home) contains only free conversation; Stanze has the eight thematic rooms. A paper-textured door identifies Stanze. The existing sliding rectangular paper selection uses four positions.
+Chat has audio-note bubbles, simulated recording, preview, discard/send, playback and recall. No text composer or text messages are rendered. Opening chat does not mark audio as listened; playback does, except in Premium private preview. No microphone capture or real calls are implemented in this mockup.

@@ -21,14 +21,14 @@ body[data-view=onboarding] .sidebar .brand{justify-content:center}
 .call .control.end>span>svg:not(.material-layer){width:76px!important;height:76px!important;transform:none!important;max-width:none;flex-shrink:0}
 .call .control>span>svg:not(.material-layer){width:30px;height:30px}
 .sidebar nav button.active{background:#f7f4ef!important;color:#2b0f2e!important}
-body[data-view=home] .paper-filters button:nth-child(3){color:#2b0f2e}
+body:is([data-view="home"],[data-view="rooms"]) .paper-filters button:nth-child(3){color:#2b0f2e}
 #mobile-nav button svg,.sidebar nav svg{fill:none!important;stroke:none!important}
 .secondary>svg:not(.material-layer){width:24px;height:24px;flex-shrink:0}
 @media(min-width:761px){.paper-card .category-art{height:200px}}
 @media(max-width:350px){.paper-card .category-art{height:110px;min-height:110px}}
 /* A single paper outline follows the selected footer item. */
 #mobile-nav button.active::after,.sidebar nav button.active::after{display:none!important;content:none!important}
-#mobile-nav .footer-paper-outline{position:absolute;left:8px;top:5px;bottom:5px;width:calc((100% - 16px)/3);pointer-events:none;z-index:0;padding:4px;border-radius:999px;background:none!important;isolation:isolate;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude}
+#mobile-nav .footer-paper-outline{position:absolute;left:8px;top:5px;bottom:5px;width:calc((100% - 16px)/4);pointer-events:none;z-index:0;padding:4px;border-radius:999px;background:none!important;isolation:isolate;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude}
 #mobile-nav .footer-paper-outline>.material-layer{opacity:1!important;filter:none;mix-blend-mode:normal}
 #mobile-nav button{z-index:1}
 
